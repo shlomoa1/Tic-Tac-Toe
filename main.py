@@ -7,12 +7,19 @@ spots = {1:'1', 2:'2', 3: '3', 4: '4', 5: '5',
 
 playing = True
 turn = 0
+prev_turn = -1
 
 while playing:
     # clearing the termenal after every turn
     os.system('cls' if os.name == 'nt' else 'clear')
+
     # drawing the board using the helper file
     draw_board(spots)
+
+    if prev_turn == turn:
+        print('Invalid input or spot selected, please try again.')
+    prev_turn = turn
+    print('Player ' + str((turn % 2)+1)+"'s turn: pick your spot or press q to quit.")
 
     choice = input()
     if choice == 'q':
