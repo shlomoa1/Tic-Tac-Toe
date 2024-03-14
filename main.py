@@ -1,4 +1,4 @@
-from helper import draw_board, check_turn
+from helper import draw_board , check_turn
 import os
 
 # a dict for every spot on the board
@@ -17,6 +17,7 @@ while playing:
     choice = input()
     if choice == 'q':
         playing = False
-
-    turn +=1
-    spots[int(choice)] = check_turn(turn)
+    elif str.isdigit(choice) and int(choice) in spots:
+        if not spots[int(choice)] in {'X', 'O'}:
+            turn +=1
+            spots[int(choice)] = check_turn(turn)
