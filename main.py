@@ -20,7 +20,7 @@ while playing:
     if prev_turn == turn:
         print('Invalid input or spot selected, please try again.')
     prev_turn = turn
-    print('Player ' + str((turn % 2)+1)+"'s turn: pick your spot or press q to quit.")
+    print('Player ' + str((turn % 2)+1)+"'s turn: pick your spot by typing 1-9 or press q to quit.")
 
     choice = input()
     if choice == 'q':
