@@ -16,8 +16,9 @@ WIN_COMBINATIONS = [
 
 # Helper function to draw the Tic Tac Toe board
 def draw_board(spots):
-    board = f'|{spots[1]}|{spots[2]}|{spots[3]}|\n|{spots[4]}|{spots[5]}|{spots[6]}|\n|{spots[7]}|{spots[8]}|{spots[9]}|'
+    board = f'|{spots[1] if spots[1] != " " else 1}|{spots[2] if spots[2] != " " else 2}|{spots[3] if spots[3] != " " else 3}|\n|{spots[4] if spots[4] != " " else 4}|{spots[5] if spots[5] != " " else 5}|{spots[6] if spots[6] != " " else 6}|\n|{spots[7] if spots[7] != " " else 7}|{spots[8] if spots[8] != " " else 8}|{spots[9] if spots[9] != " " else 9}|'
     print(board)
+
 
 # Helper function to check for a win
 def check_for_win(spots, player):
@@ -92,6 +93,8 @@ while playing:
     # Check for win or tie
     if check_for_win(spots, PLAYER_X):
         playing = False
+    elif check_for_win(spots, PLAYER_O):
+        playing= False
     elif check_for_tie(spots):
         playing = False
 
